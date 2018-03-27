@@ -1,9 +1,9 @@
 #!/usr/bin/groovy
-@Library('github.com/stakater/fabric8-pipeline-library@master')
+@Library('github.com/stakater/fabric8-pipeline-library@critical-annotation')
 String chartPackageName = ""
 String chartName = "helloworld"
 
-toolsNode(toolsImage: 'stakater/pipeline-tools:1.2.0') {
+toolsNode(toolsImage: 'stakater/pipeline-tools:1.4.0') {
     container(name: 'tools') {
         def helm = new io.stakater.charts.Helm()
         def common = new io.stakater.Common()
@@ -13,6 +13,7 @@ toolsNode(toolsImage: 'stakater/pipeline-tools:1.2.0') {
         }
         
         stage('Init Helm') {
+            sh "sleep 1h"
             helm.init(true)
         }
 
