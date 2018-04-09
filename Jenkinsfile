@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-@Library('github.com/stakater/fabric8-pipeline-library@critical-annotation')
+@Library('github.com/stakater/fabric8-pipeline-library@pod-annotation')
 String chartPackageName = ""
 String chartName = "helloworld"
 
